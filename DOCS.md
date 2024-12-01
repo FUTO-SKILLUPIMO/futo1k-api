@@ -113,7 +113,7 @@
 
 #### Request:  
 - **Headers**:  
-  `Authorization: Bearer <jwt_token>`  
+  `Authorization: Nill`  
 
 #### Response:  
 - **Success (200)**:  
@@ -142,10 +142,7 @@
 **Endpoint**: `GET /campaigns/:id`  
 **Description**: Fetches detailed information about a specific campaign by its ID.  
 
-#### Request:  
-- **Headers**:  
-  `Authorization: Bearer <jwt_token>`  
-
+#### Request:    
 - **Params**:  
   `id` - The ID of the campaign.
 
