@@ -10,17 +10,21 @@
 
 ### **1. Register a New User**  
 **Endpoint**: `POST /auth/register`  
-**Description**: Registers a new user.  
+**Description**: Registers a new user with detailed information.  
 
 #### Request:  
 - **Headers**:  
   `Content-Type: application/json`  
+
 - **Body**:  
   ```json
   {
-    "name": "John Doe",
+    "firstName": "John",
+    "lastName": "Doe",
     "email": "john@example.com",
-    "password": "password123"
+    "password": "password123",
+    "phoneNumber": "1234567890",
+    "institution": "FUTO"
   }
   ```
 
@@ -36,7 +40,20 @@
 - **Error (400)**:  
   ```json
   {
+    "message": "Validation error: <validation_message>"
+  }
+  ```
+  OR  
+  ```json
+  {
     "message": "User already exists"
+  }
+  ```
+
+- **Error (500)**:  
+  ```json
+  {
+    "message": "Server error"
   }
   ```
 
@@ -90,8 +107,17 @@
   {
     "user": {
       "_id": "64e8a123...",
-      "name": "John Doe",
-      "email": "john@example.com"
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@example.com",
+      "phoneNumber": "1234567890",
+      "institution": "FUTO",
+      "supportedCampaigns": [
+        {
+          "campaignId": "64e8f893...",
+          "amount": 100
+        }
+      ]
     }
   }
   ```
